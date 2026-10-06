@@ -310,6 +310,8 @@ function lumina_schema_webpage() {
 		$type = 'ContactPage';
 	} elseif ( is_page( 'faq' ) ) {
 		$type = 'FAQPage';
+	} elseif ( is_page( 'services' ) ) {
+		$type = 'CollectionPage';
 	} elseif ( is_singular( 'post' ) ) {
 		$type = 'ItemPage';
 	} elseif ( is_search() ) {
@@ -343,6 +345,63 @@ function lumina_schema_webpage() {
 }
 
 /**
+ * The treatment catalogue, as an ItemList of Service entities on the services hub.
+ * Answer engines extract ordered lists like this far more reliably than prose.
+ */
+function lumina_schema_service_catalog() {
+	$services = array(
+		'dental-implants'      => array( 'Dental implants', 'Surgical placement of titanium implants and prosthetic teeth to replace one or more missing teeth.', 'Implant dentistry' ),
+		'porcelain-veneers'    => array( 'Porcelain veneers', 'Custom ceramic veneers bonded to the front teeth to change shape, shade and alignment.', 'Cosmetic dentistry' ),
+		'invisalign'           => array( 'Invisalign clear aligners', 'Removable clear aligner therapy planned from a digital intraoral scan.', 'Orthodontics' ),
+		'teeth-whitening'      => array( 'Laser teeth whitening', 'In-office and take-home peroxide whitening for extrinsic and intrinsic staining.', 'Cosmetic dentistry' ),
+		'emergency-dentistry'  => array( 'Emergency dentistry', 'Same-day assessment and pain relief for dental emergencies, on a 24/7 hotline.', 'Emergency dental care' ),
+		'sedation-dentistry'   => array( 'Sedation dentistry', 'Nitrous oxide, oral conscious and IV sedation for anxious patients.', 'Dental anesthesia' ),
+		'same-day-crowns'      => array( 'Same-day crowns', 'Chairside CAD/CAM scanning, design and milling of a ceramic crown in one visit.', 'Restorative dentistry' ),
+		'preventive-care'      => array( 'Preventive and hygiene care', 'Examinations, digital radiography, cleanings, fluoride and oral cancer screening.', 'Preventive dentistry' ),
+	);
+
+	$route_keys = array(
+		'dental-implants'     => 'implants',
+		'porcelain-veneers'   => 'veneers',
+		'invisalign'          => 'invisalign',
+		'teeth-whitening'     => 'whitening',
+		'emergency-dentistry' => 'emergency',
+		'sedation-dentistry'  => 'sedation',
+		'same-day-crowns'     => 'crowns',
+		'preventive-care'     => 'preventive',
+	);
+
+	$items = array();
+	$position = 1;
+	foreach ( $services as $slug => $s ) {
+		$url     = lumina_url( $route_keys[ $slug ] );
+		$items[] = array(
+			'@type'    => 'ListItem',
+			'position' => $position++,
+			'item'     => array(
+				'@type'       => array( 'Service', 'MedicalProcedure' ),
+				'@id'         => $url . '#service',
+				'name'        => $s[0],
+				'description' => $s[1],
+				'serviceType' => $s[2],
+				'url'         => $url,
+				'provider'    => array( '@id' => home_url( '/#organization' ) ),
+				'areaServed'  => array( '@type' => 'City', 'name' => 'San Francisco' ),
+			),
+		);
+	}
+
+	return array(
+		'@type'           => 'ItemList',
+		'@id'             => lumina_url( 'services' ) . '#catalog',
+		'name'            => 'Dental treatments offered by Lumina Dental Studio',
+		'numberOfItems'   => count( $items ),
+		'itemListOrder'   => 'https://schema.org/ItemListOrderAscending',
+		'itemListElement' => $items,
+	);
+}
+
+/**
  * Print the graph.
  */
 function lumina_print_schema() {
@@ -366,6 +425,9 @@ function lumina_print_schema() {
 		$service = lumina_schema_service( $id );
 		if ( $service ) {
 			$graph[] = $service;
+		}
+		if ( is_page( 'services' ) ) {
+			$graph[] = lumina_schema_service_catalog();
 		}
 		$faq = lumina_schema_faq( $id );
 		if ( $faq ) {
