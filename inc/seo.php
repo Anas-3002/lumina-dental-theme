@@ -239,6 +239,11 @@ add_filter( 'wp_sitemaps_posts_query_args', 'lumina_sitemap_exclude', 10, 2 );
 /**
  * /llms.txt - a curated, machine-readable map of the site for LLM crawlers that
  * honour the emerging llms.txt convention.
+ *
+ * Served on template_redirect at priority 1, before WordPress's canonical redirect
+ * runs: redirect_canonical would otherwise 301 "/llms.txt" to "/llms.txt/" and the
+ * endpoint would never be reachable. The request path is checked directly as well
+ * as the rewrite query var, so a stale rewrite rule cannot break it.
  */
 function lumina_llms_rewrite() {
 	add_rewrite_rule( '^llms\.txt$', 'index.php?lumina_llms=1', 'top' );
@@ -251,10 +256,22 @@ function lumina_llms_query_vars( $vars ) {
 }
 add_filter( 'query_vars', 'lumina_llms_query_vars' );
 
+function lumina_is_llms_request() {
+	if ( get_query_var( 'lumina_llms' ) ) {
+		return true;
+	}
+	$uri  = isset( $_SERVER['REQUEST_URI'] ) ? (string) $_SERVER['REQUEST_URI'] : '';
+	$path = trim( (string) wp_parse_url( $uri, PHP_URL_PATH ), '/' );
+	return ( 'llms.txt' === $path );
+}
+
 function lumina_render_llms_txt() {
-	if ( ! get_query_var( 'lumina_llms' ) ) {
+	if ( ! lumina_is_llms_request() ) {
 		return;
 	}
+
+	status_header( 200 );
+	nocache_headers();
 
 	$facts = lumina_site_facts();
 	header( 'Content-Type: text/plain; charset=utf-8' );
@@ -312,4 +329,4 @@ function lumina_render_llms_txt() {
 	echo implode( "\n", $out ); // phpcs:ignore WordPress.Security.EscapeOutput
 	exit;
 }
-add_action( 'template_redirect', 'lumina_render_llms_txt' );
+add_action( 'template_redirect', 'lumina_render_llms_txt', 1 );

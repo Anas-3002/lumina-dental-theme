@@ -243,22 +243,19 @@ function lumina_run_installer() {
 		$log[] = 'removed stock comment';
 	}
 
-	/* A physical robots.txt shadows WordPress's dynamic one. If it is stale or missing
-	   the sitemap reference, replace it so crawlers are not blocked. */
-	$robots_path = ABSPATH . 'robots.txt';
-	if ( file_exists( $robots_path ) ) {
-		$existing = (string) @file_get_contents( $robots_path );
-		if ( false === strpos( $existing, 'Sitemap:' ) ) {
-			if ( @unlink( $robots_path ) ) {
-				$log[] = 'removed stale robots.txt (WordPress now serves the dynamic one)';
-			} elseif ( false !== @file_put_contents( $robots_path, lumina_robots_text() ) ) {
-				$log[] = 'rewrote stale robots.txt in place';
-			} else {
-				$log[] = 'WARNING: could not fix robots.txt - check it manually';
-			}
-		} else {
-			$log[] = 'robots.txt already declares a sitemap, left alone';
-		}
+	/* Hostinger's edge serves a robots.txt that disallows Googlebot on these temporary
+	   domains, and a physical file did not exist here to take precedence. Write one so
+	   the correct crawl policy always wins, and repair it if it goes stale. */
+	$robots_path  = ABSPATH . 'robots.txt';
+	$robots_want  = lumina_robots_text();
+	$robots_have  = file_exists( $robots_path ) ? (string) @file_get_contents( $robots_path ) : '';
+	if ( false === strpos( $robots_have, 'Sitemap:' ) ) {
+		$written = @file_put_contents( $robots_path, $robots_want );
+		$log[]   = ( false !== $written )
+			? 'wrote robots.txt (' . strlen( $robots_want ) . ' bytes)'
+			: 'WARNING: could not write robots.txt - the host default may still disallow crawlers';
+	} else {
+		$log[] = 'robots.txt already correct, left alone';
 	}
 
 	/* Home + blog containers. front-page.php renders the design for the front page. */
