@@ -165,8 +165,11 @@ remove_action( 'wp_head', 'rel_canonical' );
 /**
  * robots.txt: keep the sitemap discoverable and explicitly welcome the answer engines.
  * Blocking them is the single most common way a site becomes invisible to AI search.
+ *
+ * The text is built by lumina_robots_text() so the installer can also repair a stale
+ * physical robots.txt file that would otherwise shadow this dynamic version.
  */
-function lumina_robots_txt( $output, $public ) {
+function lumina_robots_text() {
 	$lines = array(
 		'# Lumina Dental Studio',
 		'User-agent: *',
@@ -200,7 +203,17 @@ function lumina_robots_txt( $output, $public ) {
 
 	return implode( "\n", $lines ) . "\n";
 }
+
+function lumina_robots_txt( $output, $public ) {
+	return lumina_robots_text();
+}
 add_filter( 'robots_txt', 'lumina_robots_txt', 10, 2 );
+
+/**
+ * Hardening: this site does not use XML-RPC, and leaving it open is a common
+ * brute-force and pingback amplification vector.
+ */
+add_filter( 'xmlrpc_enabled', '__return_false' );
 
 /**
  * Keep the conversion-only thank-you page out of the XML sitemap.

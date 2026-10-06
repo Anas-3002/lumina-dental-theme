@@ -228,6 +228,39 @@ function lumina_run_installer() {
 		update_option( 'permalink_structure', '/%postname%/' );
 	}
 
+	/* Remove the stock "Hello world!" post and sample page so the blog starts clean. */
+	foreach ( get_posts( array( 'post_type' => array( 'post', 'page' ), 'post_status' => 'any', 'numberposts' => -1 ) ) as $stale ) {
+		$is_stock_post = ( 'post' === $stale->post_type && 'hello-world' === $stale->post_name );
+		$is_stock_page = ( 'page' === $stale->post_type && 'sample-page' === $stale->post_name );
+		if ( $is_stock_post || $is_stock_page ) {
+			wp_delete_post( $stale->ID, true );
+			$log[] = 'removed stock content: ' . $stale->post_name;
+		}
+	}
+	$stock_comment = get_comment( 1 );
+	if ( $stock_comment && false !== strpos( $stock_comment->comment_author_email, 'example.com' ) ) {
+		wp_delete_comment( $stock_comment->comment_ID, true );
+		$log[] = 'removed stock comment';
+	}
+
+	/* A physical robots.txt shadows WordPress's dynamic one. If it is stale or missing
+	   the sitemap reference, replace it so crawlers are not blocked. */
+	$robots_path = ABSPATH . 'robots.txt';
+	if ( file_exists( $robots_path ) ) {
+		$existing = (string) @file_get_contents( $robots_path );
+		if ( false === strpos( $existing, 'Sitemap:' ) ) {
+			if ( @unlink( $robots_path ) ) {
+				$log[] = 'removed stale robots.txt (WordPress now serves the dynamic one)';
+			} elseif ( false !== @file_put_contents( $robots_path, lumina_robots_text() ) ) {
+				$log[] = 'rewrote stale robots.txt in place';
+			} else {
+				$log[] = 'WARNING: could not fix robots.txt - check it manually';
+			}
+		} else {
+			$log[] = 'robots.txt already declares a sitemap, left alone';
+		}
+	}
+
 	/* Home + blog containers. front-page.php renders the design for the front page. */
 	$home_id = lumina_find_by_slug( 'home', 'page' );
 	if ( ! $home_id ) {

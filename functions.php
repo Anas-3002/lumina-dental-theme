@@ -9,8 +9,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'LUMINA_VERSION', '2.0.0' );
-define( 'LUMINA_CONTENT_VERSION', '2.0.0' );
+define( 'LUMINA_VERSION', '2.0.1' );
+define( 'LUMINA_CONTENT_VERSION', '2.0.1' );
 
 require_once get_template_directory() . '/inc/template-tags.php';
 require_once get_template_directory() . '/inc/forms.php';
