@@ -1,0 +1,75 @@
+<section class="w-full pt-14 pb-14 bg-on-secondary-fixed text-on-secondary">
+	<div class="max-w-7xl mx-auto px-6 lg:px-12">
+		<nav class="font-label-sm text-label-sm text-secondary-fixed-dim mb-6" aria-label="Breadcrumb">
+			<a class="hover:text-primary-fixed transition-colors" href="/">Home</a>
+			<span class="mx-2">/</span>
+			<span class="text-on-secondary">Accessibility</span>
+		</nav>
+		<div class="max-w-3xl space-y-5">
+			<span class="inline-block font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed font-bold bg-primary/25 px-3 py-1 rounded-full">Accessibility</span>
+			<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero font-bold">Accessibility Statement</h1>
+			<p class="font-body-lg text-body-lg text-secondary-fixed-dim">We want every patient to be able to use this website and our practice. This statement explains where we are, how we test, and how to tell us when something does not work.</p>
+		</div>
+	</div>
+</section>
+
+<section class="w-full py-14 bg-surface">
+	<div class="max-w-3xl mx-auto px-6 lg:px-12 lumina-prose">
+		<h2>Our commitment</h2>
+		<p>Lumina Dental Studio aims to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at Level AA for this website, and to provide equivalent access to our services for patients with disabilities. Accessibility is treated as a clinical access issue, not a technical afterthought: if a patient cannot book an appointment, that is a barrier to care.</p>
+
+		<h2>Conformance status</h2>
+		<p>This website is designed and built to conform to WCAG 2.2 Level AA. Where we know of gaps, they are listed below rather than left implied.</p>
+
+		<h3>What is in place</h3>
+		<ul>
+			<li>Semantic HTML landmarks (<code>header</code>, <code>nav</code>, <code>main</code>, <code>footer</code>) and a single, correctly ordered heading structure on every page.</li>
+			<li>A "Skip to content" link as the first focusable element on each page.</li>
+			<li>Visible focus indicators on every interactive element, using a 3px high-contrast outline.</li>
+			<li>Text and interface colours checked against AA contrast minimums (4.5:1 for body text, 3:1 for large text and UI boundaries).</li>
+			<li>Form fields with programmatically associated labels, and error handling that does not rely on colour alone.</li>
+			<li>The FAQ accordion is operable by keyboard and exposes its state through native button semantics.</li>
+			<li>The mobile navigation is a real button with <code>aria-expanded</code> and <code>aria-controls</code>, not a div pretending to be a control.</li>
+			<li>Decorative icons are hidden from assistive technology with <code>aria-hidden</code> and carry no meaning on their own.</li>
+			<li>Layouts reflow without loss of content or function at 320 CSS pixels wide and at 200% zoom.</li>
+			<li>Animation respects <code>prefers-reduced-motion</code>.</li>
+		</ul>
+
+		<h3>Known limitations</h3>
+		<ul>
+			<li>The clinical before-and-after photography on our patient stories page is illustrative on this demonstration site and does not yet carry full descriptive text. When real case photography is published, each image will have a description that conveys the clinical change, not just the filename.</li>
+			<li>Some third-party embeds (for example mapping) may not fully meet AA. Where an embed is used, an address in text and a phone number are always provided as an equivalent route.</li>
+			<li>The document "Sources" lists on long articles are visually a numbered list; they are marked up as an ordered list so the numbering is conveyed programmatically as well.</li>
+		</ul>
+
+		<h3>Accessibility in the practice</h3>
+		<ul>
+			<li>Step-free access and lift access to Suite 1800 — call ahead and we will meet you at the building entrance.</li>
+			<li>Wheelchair-accessible treatment rooms and a transfer hoist available on request.</li>
+			<li>Interpreters can be arranged with at least five working days' notice; American Sign Language is available by prior arrangement.</li>
+			<li>Large-print and high-contrast versions of patient information leaflets.</li>
+			<li>We welcome a companion, support worker or advocate in the treatment room.</li>
+			<li>Written treatment plans are provided in plain English, and we will read them through with you if that is easier.</li>
+		</ul>
+
+		<h2>How we test</h2>
+		<p>This site is reviewed with automated accessibility testing in the build pipeline and with manual keyboard-only and screen-reader passes (VoiceOver and NVDA) when a template changes. Automated tools catch roughly a third of real issues, so the manual pass is the one that matters. Feedback from patients is treated as a defect report.</p>
+
+		<h2>Feedback and enforcement</h2>
+		<p>If you meet a barrier on this website or in our practice, tell us. Email <a href="mailto:hello@luminadentalstudio.com">hello@luminadentalstudio.com</a>, call (800) 586-4621, or write to Lumina Dental Studio, 450 Sutter St, Suite 1800, San Francisco, CA 94108. Please say what you were trying to do and which page or room you were in. We aim to reply within two working days and to fix confirmed website barriers within 30 days, or to give you an accessible alternative immediately while the fix is made.</p>
+		<p class="text-outline text-body-sm"><em>This statement describes a demonstration site. Replace the review date, the named limitations and the testing claim with your own verified results before publishing.</em></p>
+	</div>
+</section>
+
+<section class="w-full py-16 bg-on-secondary-fixed text-on-secondary">
+	<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
+		<div class="max-w-2xl space-y-3">
+			<h2 class="font-headline-md text-headline-md font-bold">Tell us about a barrier</h2>
+			<p class="font-body-md text-body-md text-secondary-fixed-dim">Every report is logged and answered. If you cannot use the booking form, call us and we will book it for you over the phone.</p>
+		</div>
+		<div class="flex flex-wrap gap-3">
+			<a class="bg-primary hover:bg-primary-container text-on-primary font-title-md text-title-md px-6 py-3 rounded-full transition-all shadow-[0_12px_28px_rgba(0,104,95,0.28)]" href="mailto:hello@luminadentalstudio.com">Email the practice</a>
+			<a class="bg-on-secondary-fixed-variant text-on-secondary font-title-md text-title-md px-6 py-3 rounded-full transition-all" href="tel:+18005864621">Call (800) 586-4621</a>
+		</div>
+	</div>
+</section>

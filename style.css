@@ -1,0 +1,36 @@
+/*
+Theme Name: Lumina Dental Studio
+Theme URI: https://mediumturquoise-manatee-549806.hostingersite.com/
+Author: Mohiyuddin Orangzaib
+Author URI: https://mediumturquoise-manatee-549806.hostingersite.com/
+Description: Conversion-focused, fully multi-page website for Lumina Dental Studio. Built from the Google Stitch design "Modern Dental Clinic Landing Page" and packaged for WordPress: 23 pages and 8 researched, cited articles generated from version-controlled HTML fragments, a working patient-registration pipeline (private Patient Requests plus email), one linked JSON-LD graph (Dentist, WebSite, Service, FAQPage, BlogPosting), an /llms.txt endpoint for answer engines, and WCAG 2.2 AA-minded markup.
+Version: 2.0.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: lumina-dental
+Tags: one-page, landing-page, healthcare, custom-colors, custom-menu, translation-ready
+*/
+
+/* Utility classes are compiled from the Stitch design tokens into
+   assets/css/theme.css by the Tailwind CLI. Only WordPress-required
+   defaults live here. */
+
+.alignleft { float: left; margin: 0 1.5rem 1rem 0; }
+.alignright { float: right; margin: 0 0 1rem 1.5rem; }
+.aligncenter { display: block; margin: 0 auto 1rem; }
+.screen-reader-text {
+	border: 0; clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%);
+	height: 1px; width: 1px; margin: -1px; overflow: hidden; padding: 0;
+	position: absolute !important; word-wrap: normal !important;
+}
+.skip-link {
+	position: absolute; left: -9999px; top: 0; z-index: 100000;
+	background: #00685f; color: #fff; padding: .75rem 1.25rem;
+	border-radius: 0 0 1rem 1rem;
+}
+.skip-link:focus { left: 50%; transform: translateX(-50%); }
+.admin-bar .fixed.top-0 { top: 32px; }
+@media screen and (max-width: 782px) { .admin-bar .fixed.top-0 { top: 46px; } }

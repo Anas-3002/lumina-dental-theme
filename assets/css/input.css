@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body { margin: 0; padding: 0; }
+  body { overscroll-behavior: none; }
+  ::-webkit-scrollbar { display: none; }
+  ::selection { background: #89f5e7; color: #00201d; }
+  :focus-visible { outline: 3px solid #00685f; outline-offset: 2px; border-radius: 0.5rem; }
+}
+
+@layer components {
+  /* anchor offset for the fixed header */
+  section[id], [id="top"] { scroll-margin-top: 130px; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+  /* ------------------------------------------------------------------
+     Editorial styles for content stored in the database (blog posts and
+     editable pages) so core HTML matches the design system.
+     ------------------------------------------------------------------ */
+  .lumina-prose { @apply font-body-lg text-body-lg text-on-surface-variant; }
+  .lumina-prose > * + * { @apply mt-5; }
+
+  .lumina-prose h2 {
+    @apply font-headline-md text-headline-md text-on-surface font-bold mt-12 mb-4 scroll-mt-32;
+  }
+  .lumina-prose h3 {
+    @apply font-title-lg text-title-lg text-on-surface font-semibold mt-9 mb-3 scroll-mt-32;
+  }
+  .lumina-prose h4 {
+    @apply font-title-md text-title-md text-on-surface font-semibold mt-7 mb-2;
+  }
+  .lumina-prose p:not(.not-prose *) { @apply font-body-lg text-body-lg text-on-surface-variant; }
+  .lumina-prose strong { @apply text-on-surface font-semibold; }
+  .lumina-prose em { @apply italic; }
+  .lumina-prose a:not(.not-prose *) {
+    @apply text-primary font-semibold underline underline-offset-2 decoration-primary/40 hover:decoration-primary transition-colors;
+  }
+  .lumina-prose ul { @apply list-disc pl-6 space-y-2; }
+  .lumina-prose ol { @apply list-decimal pl-6 space-y-2; }
+  .lumina-prose li:not(.not-prose *) { @apply font-body-lg text-body-lg text-on-surface-variant pl-1; }
+  .lumina-prose li > ul, .lumina-prose li > ol { @apply mt-2; }
+
+  .lumina-prose blockquote {
+    @apply border-l-4 border-primary bg-surface-container-low rounded-r-2xl px-6 py-5 my-8 font-body-lg text-body-lg text-on-surface italic;
+  }
+  .lumina-prose blockquote p { @apply text-on-surface; }
+  .lumina-prose blockquote cite { @apply block not-italic font-label-md text-label-md text-on-surface-variant mt-3; }
+
+  .lumina-prose table {
+    @apply w-full border border-surface-container rounded-2xl overflow-hidden my-8 font-body-md text-body-md text-left;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  .lumina-prose thead { @apply bg-surface-container-low; }
+  .lumina-prose th {
+    @apply font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-bold px-5 py-4 border-b border-surface-container align-top;
+  }
+  .lumina-prose td {
+    @apply px-5 py-4 border-b border-surface-container align-top text-on-surface-variant font-body-md text-body-md;
+  }
+  .lumina-prose tbody tr:last-child td { @apply border-b-0; }
+  .lumina-prose tbody tr:nth-child(even) { @apply bg-surface/60; }
+
+  .lumina-prose hr { @apply border-0 border-t border-surface-container my-10; }
+  .lumina-prose code {
+    @apply font-mono text-body-sm bg-surface-container-low text-on-surface px-1.5 py-0.5 rounded;
+  }
+  .lumina-prose sup { @apply text-xs align-super; }
+  .lumina-prose sup a { @apply no-underline text-primary font-bold; }
+  .lumina-prose img { @apply rounded-2xl w-full h-auto; }
+  .lumina-prose figure { @apply my-8; }
+  .lumina-prose figcaption {
+    @apply font-label-md text-label-md text-outline mt-3 text-center;
+  }
+
+  /* Core block classes that may appear in edited content. */
+  .lumina-prose .wp-block-table { @apply my-8 overflow-x-auto; }
+  .lumina-prose .wp-block-quote { @apply border-l-4 border-primary bg-surface-container-low rounded-r-2xl px-6 py-5 my-8; }
+  .lumina-prose .wp-block-heading { @apply scroll-mt-32; }
+
+  /* Search + pagination overrides so core markup looks like the design. */
+  .lumina-search-form input[type="search"] { @apply appearance-none; }
+  .navigation.pagination { @apply flex justify-center; }
+  .navigation.pagination .nav-links { @apply flex flex-wrap items-center gap-2; }
+  .navigation.pagination .page-numbers {
+    @apply inline-flex items-center justify-center min-w-[2.75rem] h-11 px-4 rounded-full bg-surface-container-low text-on-surface font-title-md text-title-md hover:bg-surface-container transition-colors;
+  }
+  .navigation.pagination .page-numbers.current { @apply bg-primary text-on-primary; }
+  .navigation.pagination .page-numbers.dots { @apply bg-transparent; }
+}
+
+/* --- design inline styles ------------------------------------- */
+@layer base {
+  html, body { margin: 0; padding: 0; }
+  body { overscroll-behavior: none; }
+  main > :first-child { margin-top: 0 !important; }
+  main > :last-child { margin-bottom: 0 !important; }
+  ::-webkit-scrollbar { display: none; }
+}

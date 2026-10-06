@@ -1,0 +1,200 @@
+{
+  "pages": [
+    {
+      "slug": "why-lumina",
+      "title": "Why Choose Lumina",
+      "parent": "",
+      "meta_title": "Why Choose Lumina Dental Studio | San Francisco Dentist",
+      "meta_description": "Hospital-grade sterilization, 3D CBCT-guided implants, a 100% Pain-Free Promise and transparent pricing. See why patients choose Lumina Dental Studio in San Francisco."
+    },
+    {
+      "slug": "services",
+      "title": "Treatments",
+      "parent": "",
+      "meta_title": "Dental Treatments in San Francisco | Lumina Dental Studio",
+      "meta_description": "Every treatment Lumina Dental Studio provides in San Francisco: implants, veneers, Invisalign, whitening, emergency care, sedation, same-day crowns and preventive hygiene, with starting prices."
+    },
+    { "slug": "dental-implants", "title": "Dental Implants", "parent": "services", "meta_title": "Dental Implants San Francisco | All-on-4 | Lumina Dental", "meta_description": "Single tooth, multiple or full-arch implants in San Francisco, planned from a 3D CBCT scan. Survival data, candidacy, the step-by-step process, costs and aftercare." },
+    { "slug": "porcelain-veneers", "title": "Porcelain Veneers", "parent": "services", "meta_title": "Porcelain Veneers San Francisco | Lumina Dental Studio", "meta_description": "Handcrafted porcelain veneers in San Francisco. What veneers fix and what they cannot, ceramic options, the two-visit process, longevity and per-tooth pricing." },
+    { "slug": "invisalign", "title": "Invisalign Clear Aligners", "parent": "services", "meta_title": "Invisalign San Francisco | Clear Aligners | Lumina Dental", "meta_description": "Invisalign clear aligner therapy in San Francisco, planned from a digital scan. How aligners move teeth, treatment timelines, aligner care, costs and how it compares to braces." },
+    { "slug": "teeth-whitening", "title": "Laser Teeth Whitening", "parent": "services", "meta_title": "Laser Teeth Whitening San Francisco | Lumina Dental Studio", "meta_description": "In-office laser whitening and custom take-home trays in San Francisco. How peroxide whitening works, what it cannot change, sensitivity and how long results last." },
+    { "slug": "emergency-dentistry", "title": "Emergency Dentistry", "parent": "services", "meta_title": "Emergency Dentist San Francisco | 24/7 Hotline | Lumina", "meta_description": "Dental emergency in San Francisco? Triaged by phone 24/7 and seen the same day for severe pain, swelling, a broken or knocked-out tooth. What to do in the first hour." },
+    { "slug": "sedation-dentistry", "title": "Sedation Dentistry", "parent": "services", "meta_title": "Sedation Dentistry San Francisco | Anxiety-Free Care | Lumina", "meta_description": "Nitrous oxide, oral conscious sedation and IV sedation for anxious patients in San Francisco. Who is a candidate, how safe each option is, and the Stop Paddle protocol." },
+    { "slug": "same-day-crowns", "title": "Same-Day Crowns", "parent": "services", "meta_title": "Same-Day Crowns San Francisco | Lumina Dental Studio", "meta_description": "Chairside CAD/CAM crowns designed, milled and fitted in one San Francisco visit. Material choices, fit accuracy, when same-day is not suitable, and costs." },
+    { "slug": "preventive-care", "title": "Preventive & Hygiene Care", "parent": "services", "meta_title": "Preventive Dental Care San Francisco | Lumina Dental Studio", "meta_description": "Exams, low-dose digital X-rays, 3D CBCT, professional cleanings, fluoride, sealants and oral cancer screening in San Francisco, with recall intervals set by your risk." },
+    {
+      "slug": "pricing",
+      "title": "Transparent Pricing",
+      "parent": "",
+      "meta_title": "Dental Prices San Francisco | Transparent Fee Schedule | Lumina",
+      "meta_description": "Our published San Francisco fee schedule: $99 new patient exam, cleanings, fillings, crowns, implants, veneers, Invisalign and whitening, plus the $34/month Lumina Wellness Club."
+    },
+    {
+      "slug": "financing",
+      "title": "Insurance & Financing",
+      "parent": "",
+      "meta_title": "Dental Insurance & Financing San Francisco | Lumina Dental",
+      "meta_description": "PPO plans accepted, how to read your dental benefits, CareCredit 0% APR, HSA and FSA use, and the maths on the Lumina Wellness Club membership versus insurance."
+    },
+    {
+      "slug": "reviews",
+      "title": "Patient Transformations & Reviews",
+      "parent": "",
+      "meta_title": "Patient Reviews & Smile Transformations | Lumina Dental Studio",
+      "meta_description": "Rated 4.9 out of 5 by more than 1,280 patients. Detailed San Francisco treatment case studies, review themes, and how to verify what you read about any dentist."
+    },
+    {
+      "slug": "new-patients",
+      "title": "New Patient Information",
+      "parent": "",
+      "meta_title": "New Patient Information | Lumina Dental Studio San Francisco",
+      "meta_description": "What happens at your first visit to Lumina Dental Studio: what the $99 New Patient Gateway includes, what to bring, how long it takes, insurance verification and a pre-visit checklist."
+    },
+    {
+      "slug": "team",
+      "title": "Meet the Team",
+      "parent": "",
+      "meta_title": "Meet Our Dental Team | Lumina Dental Studio San Francisco",
+      "meta_description": "The clinicians and coordinators behind Lumina Dental Studio in San Francisco, led by Dr. Sarah Jenkins, DDS, and what each role does for your care."
+    },
+    {
+      "slug": "book",
+      "title": "Book an Appointment",
+      "parent": "",
+      "meta_title": "Book a Dentist in San Francisco | Lumina Dental Studio",
+      "meta_description": "Request an appointment at Lumina Dental Studio in San Francisco. Same-day and next-day openings, a $99 new patient exam, and a 24/7 hotline for dental emergencies."
+    },
+    {
+      "slug": "faq",
+      "title": "Frequently Asked Questions",
+      "parent": "",
+      "meta_title": "Dental FAQs: Costs, Anxiety & Treatment | Lumina Dental Studio",
+      "meta_description": "Straight answers on dental costs, insurance, pain, sedation, implants, Invisalign, emergency care and treatment timelines from the team at Lumina Dental Studio, San Francisco."
+    },
+    {
+      "slug": "contact",
+      "title": "Contact & Directions",
+      "parent": "",
+      "meta_title": "Contact Lumina Dental Studio | 450 Sutter St, San Francisco",
+      "meta_description": "Call (800) 586-4621, visit 450 Sutter St, Suite 1800, San Francisco, or send a message. Opening hours, transit and parking guidance, and what to do in an emergency."
+    },
+    {
+      "slug": "thank-you",
+      "title": "Thank You",
+      "parent": "",
+      "noindex": true,
+      "meta_title": "Thank You | Lumina Dental Studio",
+      "meta_description": "Your appointment request has been received. Here is what happens next at Lumina Dental Studio."
+    },
+    {
+      "slug": "privacy-policy",
+      "title": "Privacy Policy",
+      "parent": "",
+      "meta_title": "Privacy Policy | Lumina Dental Studio",
+      "meta_description": "How Lumina Dental Studio collects, uses, shares and protects information submitted through this website, and the choices and rights you have over your data."
+    },
+    {
+      "slug": "hipaa-notice",
+      "title": "HIPAA Notice of Privacy Practices",
+      "parent": "",
+      "meta_title": "HIPAA Notice of Privacy Practices | Lumina Dental Studio",
+      "meta_description": "How Lumina Dental Studio may use and disclose your protected health information, your rights over your dental records, and how to exercise them."
+    },
+    {
+      "slug": "accessibility",
+      "title": "Accessibility Statement",
+      "parent": "",
+      "meta_title": "Accessibility Statement | Lumina Dental Studio",
+      "meta_description": "Our WCAG 2.2 AA commitment, what is already in place on this website, the known limitations, accessibility in the practice, and how to report a barrier."
+    },
+    {
+      "slug": "terms",
+      "title": "Terms of Clinical Treatment",
+      "parent": "",
+      "meta_title": "Terms of Clinical Treatment | Lumina Dental Studio",
+      "meta_description": "The terms applying to treatment at Lumina Dental Studio: appointment requests, consent, our pain-free promise, the five-year restoration warranty, fees and records."
+    }
+  ],
+  "posts": [
+    {
+      "slug": "dental-implant-cost-san-francisco",
+      "title": "What Dental Implants Really Cost in San Francisco",
+      "category": "Costs & Insurance",
+      "tags": ["dental implants", "cost", "San Francisco", "financing"],
+      "date": "2026-09-24 09:00:00",
+      "excerpt": "A transparent breakdown of what an implant, abutment and crown actually cost in San Francisco, why quotes differ so much, what insurance covers, and the real cost of a bridge over ten years.",
+      "meta_title": "Dental Implant Cost San Francisco (2026 Price Breakdown)",
+      "meta_description": "What dental implants cost in San Francisco in 2026: implant, abutment and crown priced separately, why quotes differ, insurance and financing, and the ten-year cost versus a bridge."
+    },
+    {
+      "slug": "invisalign-vs-braces",
+      "title": "Invisalign vs Braces: What the Evidence Says",
+      "category": "Treatments",
+      "tags": ["Invisalign", "braces", "orthodontics"],
+      "date": "2026-09-17 09:00:00",
+      "excerpt": "Aligners and fixed braces move teeth in different ways with different trade-offs. Here is how they compare on outcomes, treatment time, hygiene, compliance and cost.",
+      "meta_title": "Invisalign vs Braces: Outcomes, Time, Cost Compared",
+      "meta_description": "Invisalign versus fixed braces compared on tooth movement, treatment duration, hygiene, compliance and cost, with the evidence on outcomes and who should choose which."
+    },
+    {
+      "slug": "dental-anxiety-what-works",
+      "title": "Dental Anxiety: What Actually Works",
+      "category": "Patient Guide",
+      "tags": ["dental anxiety", "sedation", "patient comfort"],
+      "date": "2026-09-10 09:00:00",
+      "excerpt": "Dental fear is common, measurable and treatable. What the prevalence data shows, which techniques have evidence behind them, and how sedation fits into a plan you control.",
+      "meta_title": "Dental Anxiety: What Actually Works (Evidence-Based)",
+      "meta_description": "How common dental anxiety really is, the psychology behind it, which coping techniques have evidence behind them, and how nitrous oxide, oral and IV sedation compare."
+    },
+    {
+      "slug": "how-often-dental-cleaning",
+      "title": "How Often Do You Really Need a Dental Cleaning?",
+      "category": "Prevention",
+      "tags": ["cleaning", "prevention", "recall interval"],
+      "date": "2026-09-03 09:00:00",
+      "excerpt": "Six months is a starting point, not a rule. What guidance actually says, which patients need three or four visits a year, and what the evidence on recall intervals shows.",
+      "meta_title": "How Often Do You Need a Dental Cleaning? The Evidence",
+      "meta_description": "What clinical guidance really says about dental cleaning frequency, who needs visits every three to four months, what happens when you delay, and how recall intervals are set."
+    },
+    {
+      "slug": "veneers-what-they-can-and-cannot-fix",
+      "title": "Porcelain Veneers: What They Can and Cannot Fix",
+      "category": "Treatments",
+      "tags": ["veneers", "cosmetic dentistry", "smile design"],
+      "date": "2026-08-27 09:00:00",
+      "excerpt": "Veneers change the surface of the front teeth, which solves some problems beautifully and does nothing for others. Here is the honest boundary, and what to fix first.",
+      "meta_title": "What Porcelain Veneers Can and Cannot Fix",
+      "meta_description": "The honest limits of porcelain veneers: which shade, shape and minor alignment problems they solve, what they cannot fix, what to treat first, and how long they last."
+    },
+    {
+      "slug": "gum-disease-and-heart-health",
+      "title": "Gum Disease and Your Heart: What the Evidence Actually Shows",
+      "category": "Prevention",
+      "tags": ["gum disease", "periodontitis", "heart health"],
+      "date": "2026-08-20 09:00:00",
+      "excerpt": "The association between periodontitis and cardiovascular disease is real and well documented. Whether treating gums lowers heart risk is a harder question, and the answer matters.",
+      "meta_title": "Gum Disease and Heart Health: What the Evidence Shows",
+      "meta_description": "How strong is the link between periodontitis and cardiovascular disease, what mechanisms are proposed, what systematic reviews conclude, and what it means for your treatment."
+    },
+    {
+      "slug": "same-day-crowns-explained",
+      "title": "Same-Day Crowns: How They Work and When They Don't",
+      "category": "Treatments",
+      "tags": ["crowns", "CAD/CAM", "restorative dentistry"],
+      "date": "2026-08-13 09:00:00",
+      "excerpt": "A crown designed and milled while you wait is genuinely possible in many cases. Here is the workflow, the material choices, and the situations where a two-visit crown is still better.",
+      "meta_title": "Same-Day Crowns Explained: Workflow, Materials, Limits",
+      "meta_description": "How chairside CAD/CAM same-day crowns are scanned, designed and milled, how zirconia and lithium disilicate compare, and when a same-day crown is not the right choice."
+    },
+    {
+      "slug": "questions-to-ask-a-new-dentist",
+      "title": "9 Questions to Ask Before You Choose a Dentist",
+      "category": "Patient Guide",
+      "tags": ["choosing a dentist", "patient guide", "San Francisco"],
+      "date": "2026-08-06 09:00:00",
+      "excerpt": "Choosing a dentist is a decision about someone who will put instruments in your mouth. These nine questions separate a practice that explains itself from one that does not.",
+      "meta_title": "9 Questions to Ask Before You Choose a Dentist",
+      "meta_description": "A practical framework for choosing a dentist: licensing and credentials, sedation training, imaging policy, treatment planning, pricing transparency and infection control."
+    }
+  ]
+}
